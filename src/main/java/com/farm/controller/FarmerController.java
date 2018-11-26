@@ -59,5 +59,42 @@ public class FarmerController {
         map.addObject("crops",list);
         return map;
     }  
+	//admin module
 	
+	@RequestMapping("/adreq")
+	public ModelAndView admin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmerCrop e)
+	{
+		edao.adminrequest(e);
+		System.out.println("adminreq....");
+		return new ModelAndView("FarmerWelcome");
+	}
+	@RequestMapping("/adaccept")
+	public ModelAndView adminaccept(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmerCrop e)
+	{
+		edao.adminaccept(e);
+		System.out.println("adminaccept....");
+		return new ModelAndView("FarmerWelcome");
+	}
+	@RequestMapping("/adreject")
+	public ModelAndView adminreject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmerCrop e)
+	{
+		edao.adminreject(e);
+		System.out.println("adminreq....");
+		return new ModelAndView("FarmerWelcome");
+	}
+	@RequestMapping("/table")
+	public ModelAndView tale(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmerCrop e)
+	{
+		edao.getRows();
+		System.out.println("table entry....");
+		return new ModelAndView("Adminrequest","tab",e);
+	}
+	@RequestMapping("/viewcrop")  
+    public ModelAndView table(){  
+        List<FarmerCrop> list= new LinkedList<FarmerCrop>();
+        list=edao.getRows();  
+        ModelAndView map = new ModelAndView("Adminrequest");
+        map.addObject("crops",list);
+        return map;
+    }  
 }

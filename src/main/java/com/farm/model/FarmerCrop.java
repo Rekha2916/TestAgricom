@@ -6,10 +6,12 @@ public class FarmerCrop {
 	private String cName;					//variable for crop name
 	private String cFertilizerType;		//variable for Fertilizer type used in crop
 	private int cQuantity;					//variable for quantity of crop on sale
-	private int cStatus;					//variable for status of crop sold status
+	private int cStatus;						//variable for status of crop sold status
 	private int cBasePrice;				//variable for crop selling base price
-	//private int cSellPrice;					//variable for final crop sold price
-
+	private int cSellPrice;					//variable for final crop sold price
+    
+	private int cBidStatus;					//variable for bid status
+    private int cRequestStatus;			//variable for request status
 	//getter and setter methods for all variables
 	public int getcId() {
 		return cId;
@@ -54,12 +56,12 @@ public class FarmerCrop {
 	public void setcBasePrice(int cBasePrice) {
 		this.cBasePrice = cBasePrice;
 	}
-/*	public int getcSellPrice() {
+	public int getcSellPrice() {
 		return cSellPrice;
 	}
 	public void setcSellPrice(int cSellPrice) {
 		this.cSellPrice = cSellPrice;
-	}*/
+	}
 	public int getfId() {
 		return fId;
 	}
@@ -67,5 +69,16 @@ public class FarmerCrop {
 		this.fId = fId;
 	}
 	private int fId;
-
+	public int getcBidStatus() {
+		return cBidStatus;
+	}
+	public void setcBidStatus(int cBidStatus) {
+		this.cBidStatus = cBidStatus;
+	}
+	public int getcRequestStatus() {
+		return cRequestStatus;
+	}
+	public void setcRequestStatus(int cRequestStatus) {
+		this.cRequestStatus = cRequestStatus;
+	}
 }

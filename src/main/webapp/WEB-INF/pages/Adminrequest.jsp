@@ -90,11 +90,15 @@ function hideURLbar(){ window.scrollTo(0,1); }
     <th>Crop Name</th>
 	<th>Fertilizer Type</th>
     <th>Quantity</th>
-    <th>MSP</th>
-    <th>Sold Price</th>
+    <th>Base Price</th>
     <th>Bid Status</th>
     <th>Request Status</th>
   </tr>
+  <form action="table">
+  <td>
+  ${tab.getcId() }<pre>${tab.getcType() }</pre><pre>${tab.getcName() }</pre><pre>${tab.getcFertilizerType() }</pre><pre>${tab.getcQuantity() }</pre><pre>${tab.getcBasePrice() }</pre><pre>${tab.getcBidrequest() }</pre><pre>${tab.getcSellrequest() }></pre>
+  
+  </form>
   <td>
   <form action="adaccept">
   	  <button type="submit" class="btn btn-primary">Accept</button>
